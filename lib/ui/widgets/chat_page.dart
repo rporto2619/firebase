@@ -1,4 +1,5 @@
 import 'package:f_202110_firebase/data/model/message.dart';
+import 'package:f_202110_firebase/domain/controller/authentication_controller.dart';
 import 'package:f_202110_firebase/domain/controller/chat_controller.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -18,6 +19,7 @@ class _ChatPageState extends State<ChatPage> {
   late TextEditingController _controller;
   late ScrollController _scrollController;
   ChatController chatController = Get.find();
+  AuthenticationController authenticationController = Get.find();
 
   @override
   void initState() {
@@ -69,7 +71,7 @@ class _ChatPageState extends State<ChatPage> {
 
   Future<void> _sendMsg(String text) async {
     //FocusScope.of(context).requestFocus(FocusNode());
-    logInfo("Calling _sendMsg with $text");
+    logInfo("Enviando Mensaje  $text");
     await chatController.sendMsg(text);
   }
 
