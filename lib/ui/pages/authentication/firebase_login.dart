@@ -12,6 +12,9 @@ class _FirebaseLogInState extends State<FirebaseLogIn> {
   final _formKey = GlobalKey<FormState>();
   final controllerEmail = TextEditingController();
   final controllerPassword = TextEditingController();
+
+  //Obten el controlador de autenticacion inyectado
+
   AuthenticationController authenticationController = Get.find();
 
   _login(theEmail, thePassword) async {
@@ -98,7 +101,7 @@ class _FirebaseLogInState extends State<FirebaseLogIn> {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => FirebaseSignUp()));
               },
-              child: Text("Create account"))
+              child: Text("Crea una cuenta"))
         ],
       ),
     );

@@ -8,6 +8,7 @@ class ChatController extends GetxController {
   var messages = <Message>[].obs;
 
   start() {
+    //Agregar limpieza de mensajes
     databaseReference
         .child("fluttermessages")
         .onChildAdded
@@ -20,12 +21,15 @@ class ChatController extends GetxController {
         .onChildAdded
         .listen(_onEntryAdded)
         .cancel();
+    //Agregar
   }
 
   _onEntryAdded(Event event) {
     print("Something was added");
     messages.add(Message.fromSnapshot(event.snapshot));
   }
+
+  //agregar metodo de cambio
 
   Future<void> sendMsg(String text) async {
     String uid = FirebaseAuth.instance.currentUser!.uid;

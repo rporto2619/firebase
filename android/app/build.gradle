@@ -21,9 +21,9 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.application'// agregarlo
 apply plugin: 'kotlin-android'
-apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.gms.google-services' //agregarlo 
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
@@ -40,7 +40,7 @@ android {
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
-        multiDexEnabled true
+        multiDexEnabled true // cuando se agregue el cloud_firestore
     }
 
     buildTypes {
@@ -58,5 +58,5 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation platform('com.google.firebase:firebase-bom:29.0.0')
+    implementation platform('com.google.firebase:firebase-bom:29.0.0') // agregarlo 
 }

@@ -1,5 +1,5 @@
 import 'package:f_202110_firebase/domain/controller/authentication_controller.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+//import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,6 +13,7 @@ class _FirebaseSignUpState extends State<FirebaseSignUp> {
   final controllerEmail = TextEditingController();
   final controllerPassword = TextEditingController();
   AuthenticationController authenticationController = Get.find();
+  //Obten el controlador de autenticacion inyectado
 
   _signup(theEmail, thePassword) async {
     try {
@@ -47,7 +48,7 @@ class _FirebaseSignUpState extends State<FirebaseSignUp> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "Sign Up Information",
+                          "crear cuenta de usuario",
                           style: TextStyle(fontSize: 20),
                         ),
                         SizedBox(
@@ -57,7 +58,7 @@ class _FirebaseSignUpState extends State<FirebaseSignUp> {
                           keyboardType: TextInputType.emailAddress,
                           controller: this.controllerEmail,
                           decoration:
-                              InputDecoration(labelText: "Email address"),
+                              InputDecoration(labelText: "Direcciòn de correo"),
                           validator: (value) {
                             if (value!.isEmpty) {
                               return "Enter email";
@@ -71,7 +72,7 @@ class _FirebaseSignUpState extends State<FirebaseSignUp> {
                         ),
                         TextFormField(
                           controller: this.controllerPassword,
-                          decoration: InputDecoration(labelText: "Password"),
+                          decoration: InputDecoration(labelText: "Contraseña"),
                           keyboardType: TextInputType.number,
                           obscureText: true,
                           validator: (value) {
